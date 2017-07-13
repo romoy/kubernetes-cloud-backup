@@ -19,7 +19,7 @@ REGISTRY ?= quay.io/stackpoint
 IMAGE := $(REGISTRY)/spc-state-backup
 
 # This version-strategy uses a manual value to set the version string
-VERSION := 0.1.11
+VERSION := 0.1.12
 
 # If you want to build and push
 all: build push

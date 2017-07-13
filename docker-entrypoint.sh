@@ -3,8 +3,8 @@
 source /functions.sh
 
 #
-GLOBALRESOURCES=${GLOBALRESOURCES:-"storageclasses"}
-RESOURCETYPES=${RESOURCETYPES:-"svc,ingress,configmap,secrets,ds,rc,deployment,statefulset,job,cronjob,serviceaccount,thirdpartyresource,networkpolicy,storageclass"}
+GLOBALRESOURCES=${GLOBALRESOURCES:-"storageclasses,thirdpartyresource,networkpolicy"}
+RESOURCETYPES=${RESOURCETYPES:-"pvc,svc,ingress,configmap,secrets,ds,rc,deployment,statefulset,cronjob,serviceaccount"}
 TARFILENAME="kube-state-$(date +%FT%T).tar.gz"
 
 # dump state
