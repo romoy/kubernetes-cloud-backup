@@ -1,7 +1,7 @@
 ##  Docker image and tag version
 ##
 image: quay.io/stackpoint/spc-state-backup
-imageTag: 0.1.11
+imageTag: 0.1.12
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -57,8 +57,8 @@ azure:
 ## Kubernetes resources type
 ##
 kubeState:
-  globalResources: "storageclasses"
-  resourceTypes: "svc,ingress,configmap,secrets,ds,rc,deployment,statefulset,job,cronjob,serviceaccount,thirdpartyresource,networkpolicy,storageclass"
+  globalResources: "storageclasses,thirdpartyresource"
+  resourceTypes: "pv,svc,ingress,configmap,secrets,ds,rc,deployment,statefulset,job,cronjob,serviceaccount"
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
