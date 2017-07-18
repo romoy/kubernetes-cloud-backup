@@ -124,6 +124,6 @@ function upload_azure_blob() {
 	# upload assets to azure blob
 	echo ""
 	echo "Upload assets backup to Azure ${CONTAINER}"
-	az storage blob upload --container-name ${CONTAINER} --file ${TARFILENAME} --name ${TARFILENAME} --account-name ${AZURE_STORAGE_ACCOUNT} --account-key ${AZURE_STORAGE_ACCESS_KEY}
+	az storage blob upload --container-name ${CONTAINER} --file /tmp/backup/${TARFILENAME} --name ${TARFILENAME} --account-name ${AZURE_STORAGE_ACCOUNT} --account-key ${AZURE_STORAGE_ACCESS_KEY}
 	echo "✓ Assets backup uploaded"
 }
