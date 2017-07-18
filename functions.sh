@@ -113,17 +113,17 @@ function upload_gcs() {
 
 function upload_azure_blob() {
 	# check if container exists, if not create it
-	if az storage container list 2>&1 | grep -w "$CONTAINER"
+	if az storage container list --account-name ${AZURE_STORAGE_ACCOUNT} --account-key ${AZURE_STORAGE_ACCESS_KEY} 2>&1 | grep -w "$CONTAINER"
 	then
 		echo "$CONTAINER does exist"
 	else
 		echo "$CONTAINER does not exist, creating it"
-		az storage container create --name ${CONTAINER}
+		az storage container create --account-name ${AZURE_STORAGE_ACCOUNT} --account-key ${AZURE_STORAGE_ACCESS_KEY} --name ${CONTAINER}
 	fi
 
 	# upload assets to azure blob
 	echo ""
 	echo "Upload assets backup to Azure ${CONTAINER}"
-	az storage blob upload --container-name ${CONTAINER} --file ${TARFILENAME} --name ${TARFILENAME}
+	az storage blob upload --container-name ${CONTAINER} --file ${TARFILENAME} --name ${TARFILENAME} --account-name ${AZURE_STORAGE_ACCOUNT} --account-key ${AZURE_STORAGE_ACCESS_KEY}
 	echo "✓ Assets backup uploaded"
 }
