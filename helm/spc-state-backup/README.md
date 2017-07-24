@@ -3,6 +3,9 @@
 This chart will schedule [Kubernetes Cron Job](https://kubernetes.io/docs/user-guide/cron-jobs/) to backup Kubernetes state to cloud storage.
 
 ## Install for the first time
+
+Installing/upgrading the chart kicks the backup, then the scheduled one will kick in.
+
 ### AWS S3
 ```bash
 helm upgrade --install spc-kube-backup spc-state-backup --namespace stackpoint-system \
