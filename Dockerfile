@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:3.8
 
-ENV KUBECTL_VERSION 1.6.6
+ENV KUBECTL_VERSION 1.10.11
 ENV KUBECTL_URI https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 
 RUN apk update && \
